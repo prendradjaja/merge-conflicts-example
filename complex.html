@@ -17,6 +17,10 @@
         { id: 'cherries', label: 'Cherries' }
       "></ng-container>
 
+      <ng-container *ngTemplateOutlet="labeledInput; context:
+        { id: 'durians', label: 'Durians' }
+      "></ng-container>
+
       <button (click)="buy()">
         Buy
       </button>
