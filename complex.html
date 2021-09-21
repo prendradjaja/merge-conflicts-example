@@ -5,20 +5,17 @@
     </h2>
 
     <form>
-      <div>
-        <label for="apples">Apples:</label>
-        <input id="apples">
-      </div>
+      <ng-container *ngTemplateOutlet="labeledInput; context:
+        { id: 'apples', label: 'Apples' }
+      "></ng-container>
 
-      <div>
-        <label for="bananas">Bananas:</label>
-        <input id="bananas">
-      </div>
+      <ng-container *ngTemplateOutlet="labeledInput; context:
+        { id: 'bananas', label: 'Bananas' }
+      "></ng-container>
 
-      <div>
-        <label for="cherries">Cherries:</label>
-        <input id="cherries">
-      </div>
+      <ng-container *ngTemplateOutlet="labeledInput; context:
+        { id: 'cherries', label: 'Cherries' }
+      "></ng-container>
 
       <button (click)="buy()">
         Buy
@@ -30,3 +27,10 @@
     </footer>
   </body>
 </html>
+
+<ng-template #labeledInput let-id="id" let-label="label">
+  <div>
+    <label for="{{ id }}">{{ label }}:</label>
+    <input id="{{ id }}">
+  </div>
+</ng-template>
