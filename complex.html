@@ -18,7 +18,11 @@
     <input mat-input id="cherries">
   </div>
 
-  <button (click)="buy()">
+  <button
+    mat-button
+    data-analytics-id="buy-button"
+    (click)="buy()"
+  >
     Buy
   </button>
 </form>
